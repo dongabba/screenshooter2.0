@@ -28,8 +28,25 @@ public class Page {
     By loginField = By.id("P101_USERNAME");
     By passwordField = By.id("P101_PASSWORD");
     By loginButton = By.id("P101_LOGIN");
+
+    //===Sport===
+    By sportLink = By.linkText("Sport");
+    By spieleLink = By.linkText("Spiele"); //Spiele Матчи
+    By spielerLink = By.linkText("Spieler"); //Spieler Игроки
+    By mannschaftenLink = By.linkText("Mannschaften"); //Mannschaften Команды
+    By trainerLink = By.linkText("Trainer"); //Trainer Тренеры
+    By wettkämpfeLink = By.linkText("Wettkämpfe"); //Wettkämpfe Соревнования
+    By medizinischesTagebuchLink = By.linkText("Medizinisches Tagebuch"); //Medizinisches Tagebuch Травмы/Заболевания
+    By berichteLink = By.linkText("Berichte"); //Berichte Отчеты
+
+    By erstellenButton = By.linkText("Erstellen"); //Erstellen Создать
+    By zurückButton = By.linkText("Zurück"); //Zurück Назад
+
     DateFormat dateFormat = new SimpleDateFormat("ddMMYYYY");
     DateFormat timeFormat = new SimpleDateFormat("HHmmss");
+
+    //===Spiele===
+
 
 
     private void type(By element, String text) {
@@ -43,6 +60,19 @@ public class Page {
         type(passwordField, password);
         click(loginButton);
         return new Page(driver);
+    }
+
+    public void gotoPageAndGetScreenshoot(By element) throws IOException {
+        click(element);
+        takeScreenShot();
+    }
+
+    public void getScreenShots() throws IOException {
+        gotoPageAndGetScreenshoot(sportLink);
+        gotoPageAndGetScreenshoot(spieleLink);
+        gotoPageAndGetScreenshoot(erstellenButton);
+        click(zurückButton);
+
     }
 
     public String getUserId(){
