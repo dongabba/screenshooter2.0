@@ -46,7 +46,7 @@ public class Page {
     By weitereInformationenLink = By.linkText("Weitere Informationen"); //Дальнейшая информация
     By dokumenteDesSpielersLink = By.linkText("Dokumente des Spielers"); //Документы игрока
     By kontakteLink = By.linkText("Kontakte/Verwandten"); //Контакты/Родственники
-    By mannschaftenPlayerLink = By.linkText("Mannschaften"); //Команда
+    By mannschaftenPlayerLink = By.xpath("//div[@class='t20VerticalSidebarList']//a[6]"); //Команда
     By trainerPlayerLink = By.linkText("Trainer"); //Тренеры
     By trainingsLink = By.linkText("Trainings / Spiele"); //Тренировки/Игры
     By beruflicheEntwicklungLink = By.linkText("Berufliche Entwicklung"); //Профессиональное развитие
