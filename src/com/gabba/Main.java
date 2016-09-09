@@ -11,8 +11,7 @@ public class Main {
         page.cleanWorkingDirectory();
         page.userLogin("azhaleiko", "123456");
         page.getPageCode();
-        //page.getScreenShootsCSLinksENG();
-        //page.getScreenShootsFromLinksFileEn();
+        page.getScreenShots();
         appLogic.closeBrowser();
     }
 }

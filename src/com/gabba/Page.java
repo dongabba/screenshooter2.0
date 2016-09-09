@@ -1,8 +1,10 @@
 package com.gabba;
 
 import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.*;
-import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.BufferedReader;
@@ -11,7 +13,9 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 /**
  * Created by gabba on 03.04.2016.
@@ -32,15 +36,42 @@ public class Page {
     //===Sport===
     By sportLink = By.linkText("Sport");
     By spieleLink = By.linkText("Spiele"); //Spiele Матчи
+    By firstLink = By.cssSelector(".even>td>a>img"); //открыть матч
     By spielerLink = By.linkText("Spieler"); //Spieler Игроки
+    //===Игроки===
+    By alleLink = By.linkText("Alle"); //Все
+    By mitarbeiterLink = By.linkText("Mitarbeiter"); //Сотрудники
+    By firstPlayerLink = By.cssSelector(".even>td>a"); //первый игрок
+    By wichtigsteAngabenLink = By.linkText("Wichtigste Angaben"); //Основные элементы
+    By weitereInformationenLink = By.linkText("Weitere Informationen"); //Дальнейшая информация
+    By dokumenteDesSpielersLink = By.linkText("Dokumente des Spielers"); //Документы игрока
+    By kontakteLink = By.linkText("Kontakte/Verwandten"); //Контакты/Родственники
+    By mannschaftenPlayerLink = By.linkText("Mannschaften"); //Команда
+    By trainerPlayerLink = By.linkText("Trainer"); //Тренеры
+    By trainingsLink = By.linkText("Trainings / Spiele"); //Тренировки/Игры
+    By beruflicheEntwicklungLink = By.linkText("Berufliche Entwicklung"); //Профессиональное развитие
+    By medizinLink = By.linkText("Medizin"); //Медицина
+
     By mannschaftenLink = By.linkText("Mannschaften"); //Mannschaften Команды
+    //===Команды===
+    By alleMannschaftenLink = By.linkText("Alle Mannschaften"); //Все команды
+    By aktiveLink = By.linkText("Aktive"); //Активные
+    By nichtAktiveLink = By.linkText("Nicht aktive"); //Не активные
+    By altersgruppeändernLink = By.linkText("altersgruppe ändern"); //изменить возраст
+    By abbrechenButtonLink = By.linkText("abbrechen"); //отменить создание команды
+    By wichtigsteAngabenTeamLink = By.linkText("Wichtigste Angaben"); //Основные элементы
+    By trainerratLink = By.linkText("Trainerrat"); //Тренера
+    By spielerTeamLink = By.linkText("Spieler"); //Игроки
+    By trainingsTeamLink = By.linkText("Trainings / Spiele"); //тренировки игры
+    By wettkämpfeTeamLink = By.linkText("Wettkämpfe"); //соревнования
+
     By trainerLink = By.linkText("Trainer"); //Trainer Тренеры
     By wettkämpfeLink = By.linkText("Wettkämpfe"); //Wettkämpfe Соревнования
     By medizinischesTagebuchLink = By.linkText("Medizinisches Tagebuch"); //Medizinisches Tagebuch Травмы/Заболевания
     By berichteLink = By.linkText("Berichte"); //Berichte Отчеты
 
-    By erstellenButton = By.linkText("Erstellen"); //Erstellen Создать
-    By zurückButton = By.linkText("Zurück"); //Zurück Назад
+    By erstellenButton = By.linkText("erstellen"); //Erstellen Создать
+    By zurückButton = By.linkText("zurück"); //Zurück Назад
 
     DateFormat dateFormat = new SimpleDateFormat("ddMMYYYY");
     DateFormat timeFormat = new SimpleDateFormat("HHmmss");
@@ -71,6 +102,54 @@ public class Page {
         gotoPageAndGetScreenshoot(sportLink);
         gotoPageAndGetScreenshoot(spieleLink);
         gotoPageAndGetScreenshoot(erstellenButton);
+        click(zurückButton);
+        gotoPageAndGetScreenshoot(firstLink);
+        click(zurückButton);
+        click(sportLink);
+        gotoPageAndGetScreenshoot(spielerLink);
+        gotoPageAndGetScreenshoot(alleLink);
+        gotoPageAndGetScreenshoot(mitarbeiterLink);
+        click(spielerLink);
+        getSpielerScreenShots();
+        click(sportLink);
+        gotoPageAndGetScreenshoot(mannschaftenLink);
+        getMannschaftenScreenShoots();
+        click(sportLink);
+
+
+
+    }
+
+    private void getMannschaftenScreenShoots() throws IOException {
+        gotoPageAndGetScreenshoot(alleMannschaftenLink);
+        gotoPageAndGetScreenshoot(nichtAktiveLink);
+        click(aktiveLink);
+        gotoPageAndGetScreenshoot(altersgruppeändernLink);
+        gotoPageAndGetScreenshoot(erstellenButton);
+        click(abbrechenButtonLink);
+        gotoPageAndGetScreenshoot(firstLink);
+        gotoPageAndGetScreenshoot(wichtigsteAngabenTeamLink);
+        gotoPageAndGetScreenshoot(trainerratLink);
+        gotoPageAndGetScreenshoot(spielerTeamLink);
+        gotoPageAndGetScreenshoot(trainingsTeamLink);
+        gotoPageAndGetScreenshoot(wettkämpfeTeamLink);
+        click(alleLink);
+        click(zurückButton);
+
+    }
+
+    private void getSpielerScreenShots() throws IOException {
+        gotoPageAndGetScreenshoot(firstPlayerLink);
+        gotoPageAndGetScreenshoot(wichtigsteAngabenLink);
+        gotoPageAndGetScreenshoot(weitereInformationenLink);
+        gotoPageAndGetScreenshoot(dokumenteDesSpielersLink);
+        gotoPageAndGetScreenshoot(kontakteLink);
+        gotoPageAndGetScreenshoot(mannschaftenPlayerLink);
+        gotoPageAndGetScreenshoot(trainerPlayerLink);
+        gotoPageAndGetScreenshoot(trainingsLink);
+        gotoPageAndGetScreenshoot(beruflicheEntwicklungLink);
+        gotoPageAndGetScreenshoot(medizinLink);
+        click(alleLink);
         click(zurückButton);
 
     }

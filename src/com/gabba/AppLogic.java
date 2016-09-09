@@ -1,12 +1,8 @@
 package com.gabba;
 
-import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
@@ -14,7 +10,7 @@ import java.util.concurrent.TimeUnit;
  * Created by gabba on 03.04.2016.
  */
 public class AppLogic {
-    private WebDriver driver = new FirefoxDriver();
+    private WebDriver driver = new ChromeDriver();
 
     public Page startBrowser() throws IOException {
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
