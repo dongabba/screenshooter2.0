@@ -553,7 +553,7 @@ public class Page {
         String pageCode = getPageCode();
         pageName = pageName.replaceAll(" ", "");
         pageName = pageName.replaceAll("\"", "");
-        FileUtils.copyFile(scrFile, new File("screenshots/" + pageName +"_"+pageCode+"_"+dateFormat.format(currentDate)+ "_"+timeFormat.format(currentDate)+"_"+"DE"+".png"));
+        FileUtils.copyFile(scrFile, new File("screenshotsDE/" + pageName +"_"+pageCode+"_"+dateFormat.format(currentDate)+ "_"+timeFormat.format(currentDate)+"_"+"DE"+".png"));
     }
 
     public void takeScreenShotEng() throws IOException {
@@ -628,7 +628,7 @@ public class Page {
     }
 
     public void cleanWorkingDirectory() {
-        File file = new File("screenshots");
+        File file = new File("screenshotsDE");
         if (file.isDirectory()){
             System.out.println("Directory exist");
         }else{
@@ -643,132 +643,6 @@ public class Page {
         }
     }
 
-    public void getScreenShootsCSLinks() throws InterruptedException, IOException {
-        click(By.linkText("Verzeichnise"));
-        click(By.linkText("Stadien"));
-        Thread.sleep(1000);
-        takeScreenShot();
-        click(By.linkText("erstellen"));
-        Thread.sleep(1000);
-        takeScreenShot();
-        click(By.linkText("Verzeichnise"));
-        click(By.linkText("Städte"));
-        Thread.sleep(1000);
-        takeScreenShot();
-        click(By.linkText("erstellen"));
-        Thread.sleep(1000);
-        takeScreenShot();
-        click(By.linkText("Verzeichnise"));
-        click(By.linkText("Ländern"));
-        Thread.sleep(1000);
-        takeScreenShot();
-        click(By.linkText("erstellen"));
-        Thread.sleep(1000);
-        takeScreenShot();
-        click(By.linkText("Verzeichnise"));
-        click(By.linkText("Bodenarten"));
-        Thread.sleep(1000);
-        takeScreenShot();
-        click(By.linkText("erstellen"));
-        Thread.sleep(1000);
-        takeScreenShot();
-        click(By.linkText("Verzeichnise"));
-        click(By.linkText("Spielerstatus"));
-        Thread.sleep(1000);
-        takeScreenShot();
-        click(By.linkText("erstellen"));
-        Thread.sleep(1000);
-        takeScreenShot();
-        click(By.linkText("Verzeichnise"));
-        click(By.linkText("Grundposition"));
-        Thread.sleep(1000);
-        takeScreenShot();
-        click(By.linkText("erstellen"));
-        Thread.sleep(1000);
-        takeScreenShot();
-        click(By.linkText("Verzeichnise"));
-        click(By.linkText("Unterpositionen"));
-        Thread.sleep(1000);
-        takeScreenShot();
-        click(By.linkText("erstellen"));
-        Thread.sleep(1000);
-        takeScreenShot();
-        click(By.linkText("Verzeichnise"));
-        click(By.linkText("Team"));
-        Thread.sleep(1000);
-        takeScreenShot();
-        click(By.linkText("Alle Teams"));
-        Thread.sleep(1000);
-        takeScreenShot();
-        click(By.linkText("Inaktive"));
-        Thread.sleep(1000);
-        takeScreenShot();
-
-    }
-
-    public void getScreenShootsCSLinksENG() throws InterruptedException, IOException {
-        click(By.linkText("ENG"));
-        click(By.linkText("Handbooks"));
-        click(By.linkText("Stadiums/Venues"));
-        Thread.sleep(1000);
-        takeScreenShotEng();
-        click(By.linkText("create"));
-        Thread.sleep(1000);
-        takeScreenShotEng();
-        click(By.linkText("Handbooks"));
-        click(By.linkText("Cities"));
-        Thread.sleep(1000);
-        takeScreenShotEng();
-        click(By.linkText("create"));
-        Thread.sleep(1000);
-        takeScreenShotEng();
-        click(By.linkText("Handbooks"));
-        click(By.linkText("Countries"));
-        Thread.sleep(1000);
-        takeScreenShotEng();
-        click(By.linkText("create"));
-        Thread.sleep(1000);
-        takeScreenShotEng();
-        click(By.linkText("Handbooks"));
-        click(By.linkText("Turf type"));
-        Thread.sleep(1000);
-        takeScreenShotEng();
-        click(By.linkText("create"));
-        Thread.sleep(1000);
-        takeScreenShotEng();
-        click(By.linkText("Handbooks"));
-        click(By.linkText("Player’s status in the match"));
-        Thread.sleep(1000);
-        takeScreenShotEng();
-        click(By.linkText("create"));
-        Thread.sleep(1000);
-        takeScreenShotEng();
-        click(By.linkText("Handbooks"));
-        click(By.linkText("Main positions"));
-        Thread.sleep(1000);
-        takeScreenShotEng();
-        click(By.linkText("create"));
-        Thread.sleep(1000);
-        takeScreenShotEng();
-        click(By.linkText("Handbooks"));
-        click(By.linkText("Subpositions"));
-        Thread.sleep(1000);
-        takeScreenShotEng();
-        click(By.linkText("create"));
-        Thread.sleep(1000);
-        takeScreenShotEng();
-        click(By.linkText("Handbooks"));
-        click(By.linkText("Teams"));
-        Thread.sleep(1000);
-        takeScreenShotEng();
-        click(By.linkText("All teams"));
-        Thread.sleep(1000);
-        takeScreenShotEng();
-        click(By.linkText("Inactive"));
-        Thread.sleep(1000);
-        takeScreenShotEng();
-
-    }
 
 
 }
