@@ -138,7 +138,7 @@ public class Page {
 
     //===Сообщения===
     By mitteilungenLink = By.linkText("Mitteilungen"); //Сообщения
-    By neu = By.linkText("Neu "); //Новые
+    By neu = By.linkText("Neu"); //Новые
     By eingegangene = By.linkText("Eingegangene"); //Полученные
     By gesendete = By.linkText("Gesendete"); //Отправленные
 
