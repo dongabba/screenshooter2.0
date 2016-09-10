@@ -20,11 +20,11 @@ import java.util.List;
 /**
  * Created by gabba on 03.04.2016.
  */
-public class PageFR {
+public class PageIT {
     private WebDriver driver;
     private WebDriverWait wait;
 
-    public PageFR(WebDriver driver) {
+    public PageIT(WebDriver driver) {
         this.driver = driver;
         wait = new WebDriverWait(driver, 10);
     }
@@ -33,143 +33,143 @@ public class PageFR {
     By passwordField = By.id("P101_PASSWORD");
     By loginButton = By.id("P101_LOGIN");
 
-    By fr = By.linkText("FR");
+    By it = By.linkText("IT");
 
     //====Кнопки===
-    By erstellenButton = By.linkText("créer"); //Erstellen Создать
-    By zurückButton = By.linkText("retour"); //Zurück Назад
-    By bearbeitenButton = By.linkText("editer"); //Редактировать
-    By abbrechenButton = By.linkText("annuler"); //Отменить
+    By erstellenButton = By.linkText("crea"); //Erstellen Создать
+    By zurückButton = By.linkText("indietro"); //Zurück Назад
+    By bearbeitenButton = By.linkText("modifica"); //Редактировать
+    By abbrechenButton = By.linkText("cancella"); //Отменить
     By speichernButton = By.linkText("sauvegarder"); //Сохранить
-    By hinzufügenButton = By.linkText("ajouter"); //Добавить
+    By hinzufügenButton = By.linkText("aggiungere"); //Добавить
 
     //===Sport===
     By sportLink = By.linkText("Sport");
-    By spieleLink = By.linkText("Matchs"); //Spiele Матчи
+    By spieleLink = By.linkText("Partite"); //Spiele Матчи
     By firstLink = By.cssSelector(".even>td>a>img"); //открыть матч
-    By spielerLink = By.linkText("Joueurs"); //Spieler Игроки
+    By spielerLink = By.linkText("Giocatori"); //Spieler Игроки
     //===Игроки===
-    By alleLink = By.linkText("Tous"); //Все
-    By mitarbeiterLink = By.linkText("Employés"); //Сотрудники
+    By alleLink = By.linkText("Tutto"); //Все
+    By mitarbeiterLink = By.linkText("Collaboratori"); //Сотрудники
     By firstPlayerLink = By.cssSelector(".even>td>a"); //первый игрок
-    By wichtigsteAngabenLink = By.linkText("Renseignements essentiels"); //Основные элементы
-    By weitereInformationenLink = By.linkText("Renseignements complémentaires"); //Дальнейшая информация
-    By dokumenteDesSpielersLink = By.linkText("Documents du joueur"); //Документы игрока
-    By kontakteLink = By.linkText("Contacts / Famille"); //Контакты/Родственники
+    By wichtigsteAngabenLink = By.linkText("Dati principali"); //Основные элементы
+    By weitereInformationenLink = By.linkText("Dati supplementari"); //Дальнейшая информация
+    By dokumenteDesSpielersLink = By.linkText("Documenti del giocatore"); //Документы игрока
+    By kontakteLink = By.linkText("Contatti/Parenti"); //Контакты/Родственники
     By mannschaftenPlayerLink = By.xpath("//div[@class='t20VerticalSidebarList']//a[6]"); //Команда
-    By trainerPlayerLink = By.linkText("Entraîneurs"); //Тренеры
-    By trainingsLink = By.linkText("Entraînements / Matchs"); //Тренировки/Игры
-    By beruflicheEntwicklungLink = By.linkText("Évolution professionnelle"); //Профессиональное развитие
-    By medizinLink = By.linkText("Médecine"); //Медицина
+    By trainerPlayerLink = By.linkText("Allenatori"); //Тренеры
+    By trainingsLink = By.linkText("Allenamenti / Partite"); //Тренировки/Игры
+    By beruflicheEntwicklungLink = By.linkText("Crescita professionale"); //Профессиональное развитие
+    By medizinLink = By.linkText("Medicina"); //Медицина
 
-    By mannschaftenLink = By.linkText("Équipes"); //Mannschaften Команды
+    By mannschaftenLink = By.linkText("Squadre"); //Mannschaften Команды
     //===Команды===
-    By alleMannschaftenLink = By.linkText("Toutes les équipes"); //Все команды
-    By aktiveLink = By.linkText("Actifs"); //Активные
-    By nichtAktiveLink = By.linkText("non actifs"); //Не активные
-    By altersgruppeändernLink = By.linkText("changer le groupe d'âge"); //изменить возраст
-    By abbrechenButtonLink = By.linkText("annuler"); //отменить создание команды
-    By wichtigsteAngabenTeamLink = By.linkText("Renseignements complémentaires"); //Основные элементы
-    By trainerratLink = By.linkText("Personnel d'encadrement"); //Тренера
-    By spielerTeamLink = By.linkText("Joueurs"); //Игроки
-    By trainingsTeamLink = By.linkText("Entraînements / Matchs"); //тренировки игры
-    By wettkämpfeTeamLink = By.linkText("Compétitions"); //соревнования
+    By alleMannschaftenLink = By.linkText("Tutte le squadre"); //Все команды
+    By aktiveLink = By.linkText("Attivi"); //Активные
+    By nichtAktiveLink = By.linkText("Inattivi"); //Не активные
+    By altersgruppeändernLink = By.linkText("cambiare gruppo d'età"); //изменить возраст
+    By abbrechenButtonLink = By.linkText("cancella"); //отменить создание команды
+    By wichtigsteAngabenTeamLink = By.linkText("Dati principali"); //Основные элементы
+    By trainerratLink = By.linkText("Corpo allenatori"); //Тренера
+    By spielerTeamLink = By.linkText("Giocatori"); //Игроки
+    By trainingsTeamLink = By.linkText("Allenamenti / Partite"); //тренировки игры
+    By wettkämpfeTeamLink = By.linkText("Gare"); //соревнования
 
     //===Тренеры===
-    By trainerLink = By.linkText("Entraîneurs"); //Trainer Тренеры
-    By kontaktinformationenLink = By.linkText("Informations de contact"); //Контактная информация
+    By trainerLink = By.linkText("Allenatori"); //Trainer Тренеры
+    By kontaktinformationenLink = By.linkText("Dati di contatto"); //Контактная информация
     By mannschaftenTrainerLink = By.xpath("//td[@class='t20RegionBody']//a[4]"); //Команда
 
     //==Соревнования===
-    By wettkämpfeLink = By.linkText("Compétitions"); //Wettkämpfe Соревнования
-    By teilnehmer = By.linkText("Participants"); //Участники
+    By wettkämpfeLink = By.linkText("Gare"); //Wettkämpfe Соревнования
+    By teilnehmer = By.linkText("Partecipanti"); //Участники
     By spieleWettkampfeLink = By.xpath(".//td[@class='t20RegionBody']//a[4]"); //Матчи соревнования
 
-    By medizinischesTagebuchLink = By.linkText("Registre médical"); //Medizinisches Tagebuch Травмы/Заболевания
-    By berichteLink = By.linkText("Rapports"); //Berichte Отчеты
+    By medizinischesTagebuchLink = By.linkText("Rivista medica"); //Medizinisches Tagebuch Травмы/Заболевания
+    By berichteLink = By.linkText("Relazioni"); //Berichte Отчеты
 
-    By mainPageLink = By.linkText("initiale"); //Главная страница
+    By mainPageLink = By.linkText("Home page"); //Главная страница
 
     //==Селекция===
-    By spielerauswahlLink = By.linkText("Sélection"); //Селекция
-    By spielerübersicht = By.linkText("Joueurs à suivre"); //Просматриваемые игроки
-    By datenVonFamilienmitgliedernLink = By.linkText("Informations sur les familles"); //Члены семьи
-    By transferInDenKlub = By.linkText("Transfert au Club"); //перевод в клуб
+    By spielerauswahlLink = By.linkText("Selezione"); //Селекция
+    By spielerübersicht = By.linkText("Giocatori in visione"); //Просматриваемые игроки
+    By datenVonFamilienmitgliedernLink = By.linkText("Informazioni sui parenti"); //Члены семьи
+    By transferInDenKlub = By.linkText("Trasferimento al Club"); //перевод в клуб
     By mannschaftenScouts = By.xpath(".//td[@class='t20RegionBody']//a[5]"); //команда
-    By physikalischeDatenLinks = By.linkText("Données physiques"); //Физические данные
+    By physikalischeDatenLinks = By.linkText("Dati fisici"); //Физические данные
     By scoutTrainerLink = By.xpath(".//td[@class='t20RegionBody']//a[8]"); //Тренер
-    By andereLink = By.linkText("Autre"); //Прочее
+    By andereLink = By.linkText("Altro"); //Прочее
 
     By scoutsLink = By.linkText("Sélectionneurs"); //Селекционеры
     By ausweispapiere = By.xpath(".//td[@class='t20RegionBody']//a[4]"); //Документы
-    By reservistenLink = By.linkText("Remplaçants"); //Резервисты
+    By reservistenLink = By.linkText("Giocatori di riserva"); //Резервисты
     By wettkämpfeZurEinsichtScLink = By.xpath(".//td[@class='t20RegionBody']//a[6]"); //Просматриваемые соревнования
 
 
-    By wettkämpfeZurEinsichtLink = By.linkText("Compétitions vues"); //Просматриваемые соревнования
+    By wettkämpfeZurEinsichtLink = By.linkText("Gare in visione"); //Просматриваемые соревнования
     By einsichScoutsLink = By.xpath(".//td[@class='t20RegionBody']//a[3]"); //Селекционеры
-    By dieScoutsSpielerLink = By.linkText("Joueurs désignés par les sélectionneurs"); //Игроки, выделенные селекционерами
-    By scoutsTrainerLink = By.linkText("Entraîneurs"); //Тренеры
+    By dieScoutsSpielerLink = By.linkText("Giocatori segnalati dai selezionisti"); //Игроки, выделенные селекционерами
+    By scoutsTrainerLink = By.linkText("Allenatori"); //Тренеры
 
     //===Справочники===
-    By handbücherLink = By.linkText("Répertoires"); //Справочники
-    By attributeFürKalenderereignisse = By.linkText("Attributs des événements de calendrier"); //Аттрибуты событий календаря
-    By stadien = By.linkText("Stades"); //Стадионы
-    By städte = By.linkText("Villes"); //Города
-    By länder = By.linkText("Pays"); //Страны
-    By verwandte = By.linkText("Membres de la famille"); //Родственники
-    By mannschaften = By.xpath(".//td[@class='t20RegionBody']//li[1]/a[text()='Équipes']"); //Команды
-    By trainingsorte = By.linkText("Lieux des entraînements"); //Места проведения тренировок
-    By trainingsgeräte = By.linkText("Équipements pour l'entraînement"); //Оборудование для тренировок
-    By registerDerÜbungen = By.linkText("Répertoire d'exercices"); //Реестр упражнений
-    By gruppeHinzufügen = By.linkText("ajouter un groupe"); //добавить группу упражнений
-    By ubungHinzufügen = By.linkText("ajouter un exercice"); //добавить упражнение
-    By spielfeldbelagtypen = By.linkText("Types de revêtements"); //Типы покрытия
-    By spielerstatusImSpiel = By.linkText("Statuts des joueurs dans le match"); //Статусы игрока в матче
-    By kategorienFürDieMedizinischeGeschichte = By.linkText("Catégories pour l'historique médical"); //Категории для медицинской истории
-    By artenVonBeschwerden = By.linkText("Types de plaintes à caractère médical"); //Типы жалоб для медицины
-    By erbguterkrankungen = By.linkText("Problèmes d'hérédité"); //Проблемы наследственности
-    By grundposition = By.linkText("Positions de base"); //Основные позиции
-    By unterpositionen = By.linkText("Sous-positions"); //Субпозиции
-    By altersgruppen = By.linkText("Tranche d'âge"); //Возрастные группы
-    By ubungen = By.linkText("Tâches physiques"); //Физические задачи
-    By intensitätsstufen = By.linkText("Niveaux d'intensité"); //Уровни интенсивности
+    By handbücherLink = By.linkText("Compendi"); //Справочники
+    By attributeFürKalenderereignisse = By.linkText("Attributi degli eventi di calendario"); //Аттрибуты событий календаря
+    By stadien = By.linkText("Stadi"); //Стадионы
+    By städte = By.linkText("Città"); //Города
+    By länder = By.linkText("Paesi"); //Страны
+    By verwandte = By.linkText("Parenti"); //Родственники
+    By mannschaften = By.xpath(".//td[@class='t20RegionBody']//li[1]/a[text()='Squadre']"); //Команды
+    By trainingsorte = By.linkText("Luoghi degli allenamenti"); //Места проведения тренировок
+    By trainingsgeräte = By.linkText("Attrezzi per allenamenti"); //Оборудование для тренировок
+    By registerDerÜbungen = By.linkText("Registro esercizi"); //Реестр упражнений
+    By gruppeHinzufügen = By.linkText("aggiungere un gruppo"); //добавить группу упражнений
+    By ubungHinzufügen = By.linkText("aggiungere un esercizio"); //добавить упражнение
+    By spielfeldbelagtypen = By.linkText("Tipologie copertura"); //Типы покрытия
+    By spielerstatusImSpiel = By.linkText("Stati del giocatore nella partita"); //Статусы игрока в матче
+    By kategorienFürDieMedizinischeGeschichte = By.linkText("Categorie della storia clinica"); //Категории для медицинской истории
+    By artenVonBeschwerden = By.linkText("Tipo sintomi accusati per medicina"); //Типы жалоб для медицины
+    By erbguterkrankungen = By.linkText("Problemi ereditari"); //Проблемы наследственности
+    By grundposition = By.linkText("Posizioni principali"); //Основные позиции
+    By unterpositionen = By.linkText("Sottoposizioni"); //Субпозиции
+    By altersgruppen = By.linkText("Classi di età"); //Возрастные группы
+    By ubungen = By.linkText("Obiettivi fisici"); //Физические задачи
+    By intensitätsstufen = By.linkText("Livelli di intensità"); //Уровни интенсивности
 
     //===Объявления===
-    By ankündigungenLink = By.linkText("Annonces"); //Объявления
+    By ankündigungenLink = By.linkText("Avvisi"); //Объявления
 
     //===Сообщения===
-    By mitteilungenLink = By.linkText("Messages"); //Сообщения
-    By neu = By.linkText("Nouveaux"); //Новые
-    By eingegangene = By.linkText("Reçus"); //Полученные
-    By gesendete = By.linkText("Envoyés"); //Отправленные
+    By mitteilungenLink = By.linkText("Messaggi"); //Сообщения
+    By neu = By.linkText("Nuovi"); //Новые
+    By eingegangene = By.linkText("Ricevuti"); //Полученные
+    By gesendete = By.linkText("Inviati"); //Отправленные
 
     //===Календарь===
-    By kalenderLink = By.linkText("Agenda"); //Календарь
-    By tag = By.xpath("//span[text()='jour']");
-    By woche = By.xpath("//span[text()='semaine']");
-    By trainingsKalenderLink = By.linkText("Entraînements"); //Тренировки
-    By ereignisse = By.linkText("Événements"); //События
-    By sonstiges = By.linkText("Autre");
-    By ankommen = By.linkText("Rencontre");
-    By mahlzeit = By.linkText("Prise de nourriture");
-    By prozeduren = By.linkText("Procédures");
-    By ausfahrt = By.linkText("Sortie");
-    By unterricht = By.linkText("Occupation");
-    By arztlicheUntersuchung = By.linkText("Visite médicale");
-    By erinnerung = By.linkText("Rappel");
+    By kalenderLink = By.linkText("Calendario"); //Календарь
+    By tag = By.xpath("//span[text()='giorno']");
+    By woche = By.xpath("//span[text()='settimana']");
+    By trainingsKalenderLink = By.linkText("Allenamenti"); //Тренировки
+    By ereignisse = By.linkText("Eventi"); //События
+    By sonstiges = By.linkText("Altro");
+    By ankommen = By.linkText("Incontro");
+    By mahlzeit = By.linkText("Pasto");
+    By prozeduren = By.linkText("Procedure");
+    By ausfahrt = By.linkText("Partenza");
+    By unterricht = By.linkText("Esercizio");
+    By arztlicheUntersuchung = By.linkText("Visita medica");
+    By erinnerung = By.linkText("Rammemorazione");
 
     //===Администрирование===
-    By administrationLink = By.linkText("Gestion"); //Администрирование
-    By nutzer = By.linkText("Utilisateurs"); //Пользователи
-    By rollen = By.linkText("Rôles"); //Роли
-    By design = By.linkText("Réglages de la conception"); //Настройка дизайна
+    By administrationLink = By.linkText("Gestione"); //Администрирование
+    By nutzer = By.linkText("Utenti"); //Пользователи
+    By rollen = By.linkText("Ruoli"); //Роли
+    By design = By.linkText("Impostazione design"); //Настройка дизайна
 
     //===Личный кабинет===
-    By persönlichesKabinett = By.linkText("Espace perso"); //Личный кабинет
-    By support = By.linkText("Assistance"); //служба поддержки
-    By aboGeschichte = By.linkText("Historique des abonnements"); //история подписок
-    By zusatzmodule = By.linkText("Modules supplémentaires"); //дополнительные модули
+    By persönlichesKabinett = By.linkText("Area riservata"); //Личный кабинет
+    By support = By.linkText("Servizio di assistenza tecnica"); //служба поддержки
+    By aboGeschichte = By.linkText("Storia sottoscrizioni"); //история подписок
+    By zusatzmodule = By.linkText("Moduli supplementari"); //дополнительные модули
     By videoführung = By.linkText("Videoführung"); //видеоруководство
 
 
@@ -187,11 +187,11 @@ public class PageFR {
         driver.findElement(element).sendKeys(text);
     }
 
-    public PageFR userLogin(String login, String password) throws IOException, InterruptedException {
+    public PageIT userLogin(String login, String password) throws IOException, InterruptedException {
         type(loginField, login);
         type(passwordField, password);
         click(loginButton);
-        return new PageFR(driver);
+        return new PageIT(driver);
     }
 
     public void gotoPageAndGetScreenshoot(By element) throws IOException, InterruptedException {
@@ -555,7 +555,7 @@ public class PageFR {
         String pageCode = getPageCode();
         pageName = pageName.replaceAll(" ", "");
         pageName = pageName.replaceAll("\"", "");
-        FileUtils.copyFile(scrFile, new File("screenshotsFR/" + pageName +"_"+pageCode+"_"+dateFormat.format(currentDate)+ "_"+timeFormat.format(currentDate)+"_"+"DE"+".png"));
+        FileUtils.copyFile(scrFile, new File("screenshotsIT/" + pageName +"_"+pageCode+"_"+dateFormat.format(currentDate)+ "_"+timeFormat.format(currentDate)+"_"+"DE"+".png"));
     }
 
     public void takeScreenShotEng() throws IOException {
@@ -630,7 +630,7 @@ public class PageFR {
     }
 
     public void cleanWorkingDirectory() {
-        File file = new File("screenshotsFR");
+        File file = new File("screenshotsIT");
         if (file.isDirectory()){
             System.out.println("Directory exist");
         }else{
@@ -646,8 +646,8 @@ public class PageFR {
     }
 
 
-    public void userGoToFRLang() {
-        click(fr);
+    public void userGoToITLang() {
+        click(it);
     }
 }
 
