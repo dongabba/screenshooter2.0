@@ -100,7 +100,7 @@ public class PageIT {
     By scoutTrainerLink = By.xpath(".//td[@class='t20RegionBody']//a[8]"); //Тренер
     By andereLink = By.linkText("Altro"); //Прочее
 
-    By scoutsLink = By.linkText("Sélectionneurs"); //Селекционеры
+    By scoutsLink = By.linkText("Selezionisti"); //Селекционеры
     By ausweispapiere = By.xpath(".//td[@class='t20RegionBody']//a[4]"); //Документы
     By reservistenLink = By.linkText("Giocatori di riserva"); //Резервисты
     By wettkämpfeZurEinsichtScLink = By.xpath(".//td[@class='t20RegionBody']//a[6]"); //Просматриваемые соревнования
