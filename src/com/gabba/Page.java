@@ -78,8 +78,11 @@ public class Page {
     By kontaktinformationenLink = By.linkText("Kontaktinformationen"); //Контактная информация
     By mannschaftenTrainerLink = By.xpath("//td[@class='t20RegionBody']//a[4]"); //Команда
 
-
+    //==Соревнования===
     By wettkämpfeLink = By.linkText("Wettkämpfe"); //Wettkämpfe Соревнования
+    By teilnehmer = By.linkText("Teilnehmer"); //Участники
+    By spieleWettkampfeLink = By.xpath(".//td[@class='t20RegionBody']//a[4]"); //Матчи соревнования
+
     By medizinischesTagebuchLink = By.linkText("Medizinisches Tagebuch"); //Medizinisches Tagebuch Травмы/Заболевания
     By berichteLink = By.linkText("Berichte"); //Berichte Отчеты
 
@@ -130,9 +133,36 @@ public class Page {
         click(sportLink);
         getTrainerScreenShoots();
         click(sportLink);
+        gotoPageAndGetScreenshoot(wettkämpfeLink);
+        getWettkampfeScreenShoots();
+        click(sportLink);
+        gotoPageAndGetScreenshoot(medizinischesTagebuchLink);
+        getMedizinischesScreenShoots();
+        click(sportLink);
+        gotoPageAndGetScreenshoot(berichteLink);
+        click(sportLink);
 
 
 
+
+    }
+
+    private void getMedizinischesScreenShoots() throws IOException, InterruptedException {
+        gotoPageAndGetScreenshoot(erstellenButton);
+        click(abbrechenButton);
+        gotoPageAndGetScreenshoot(firstPlayerLink);
+        click(abbrechenButton);
+    }
+
+    private void getWettkampfeScreenShoots() throws IOException, InterruptedException {
+        gotoPageAndGetScreenshoot(erstellenButton);
+        click(zurückButton);
+        gotoPageAndGetScreenshoot(firstLink);
+        gotoPageAndGetScreenshoot(alleLink);
+        gotoPageAndGetScreenshoot(teilnehmer);
+        gotoPageAndGetScreenshoot(spieleWettkampfeLink);
+        click(wichtigsteAngabenLink);
+        click(zurückButton);
 
     }
 
