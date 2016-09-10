@@ -147,7 +147,7 @@ public class Page {
         click(abbrechenButton);
         gotoPageAndGetScreenshoot(mannschaftenTrainerLink);
         gotoPageAndGetScreenshoot(hinzufügenButton);
-        gotoPageAndGetScreenshoot(erstellenButton);
+        //gotoPageAndGetScreenshoot(erstellenButton);
         click(abbrechenButton);
         gotoPageAndGetScreenshoot(trainingsTeamLink);
 
