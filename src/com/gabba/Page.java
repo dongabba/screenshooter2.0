@@ -86,12 +86,33 @@ public class Page {
     By medizinischesTagebuchLink = By.linkText("Medizinisches Tagebuch"); //Medizinisches Tagebuch Травмы/Заболевания
     By berichteLink = By.linkText("Berichte"); //Berichte Отчеты
 
+    By mainPageLink = By.linkText("Startseite"); //Главная страница
 
+    //==Селекция===
+    By spielerauswahlLink = By.linkText("Spielerauswahl"); //Селекция
+    By spielerübersicht = By.linkText("Spielerübersicht"); //Просматриваемые игроки
+    By datenVonFamilienmitgliedernLink = By.linkText("Daten von Familienmitgliedern"); //Члены семьи
+    By transferInDenKlub = By.linkText("Transfer in den Klub"); //перевод в клуб
+    By mannschaftenScouts = By.xpath(".//td[@class='t20RegionBody']//a[5]"); //команда
+    By physikalischeDatenLinks = By.linkText("Physikalische Daten"); //Физические данные
+    By scoutTrainerLink = By.xpath(".//td[@class='t20RegionBody']//a[7]"); //Тренер
+    By andereLink = By.linkText("Andere"); //Прочее
+
+    By scoutsLink = By.linkText("Scouts"); //Селекционеры
+    By ausweispapiere = By.linkText("Ausweispapiere"); //Документы
+    By reservistenLink = By.linkText("Reservisten"); //Резервисты
+    By wettkämpfeZurEinsichtScLink = By.xpath(".//td[@class='t20RegionBody']//a[6]"); //Просматриваемые соревнования
+
+
+    By wettkämpfeZurEinsichtLink = By.linkText("Wettkämpfe zur Einsicht"); //Просматриваемые соревнования
+    By einsichScoutsLink = By.xpath(".//td[@class='t20RegionBody']//a[3]"); //Селекционеры
+    By dieScoutsSpielerLink = By.linkText("Die scouts Spieler"); //Игроки, выделенные селекционерами
+    By scoutsTrainerLink = By.linkText("Trainer"); //Тренеры
 
     DateFormat dateFormat = new SimpleDateFormat("ddMMYYYY");
     DateFormat timeFormat = new SimpleDateFormat("HHmmss");
 
-    //===Spiele===
+
 
 
 
@@ -141,10 +162,105 @@ public class Page {
         click(sportLink);
         gotoPageAndGetScreenshoot(berichteLink);
         click(sportLink);
+        gotoPageAndGetScreenshoot(mainPageLink);
+        gotoPageAndGetScreenshoot(spielerauswahlLink);
+        gotoPageAndGetScreenshoot(spielerübersicht);
+        getSpielerubersichtScreenShoots();
+        click(spielerauswahlLink);
+        gotoPageAndGetScreenshoot(scoutsLink);
+        getScoutsScreenShoots();
+        click(spielerauswahlLink);
+        gotoPageAndGetScreenshoot(wettkämpfeZurEinsichtLink);
+        getWettkampfeZurEinsichtScreenShoots();
+        click(spielerauswahlLink);
+        gotoPageAndGetScreenshoot(scoutsTrainerLink);
+        getScoutsTrainerScreenShoots();
+        click(spielerauswahlLink);
 
 
 
 
+
+
+    }
+
+    private void getScoutsTrainerScreenShoots() throws IOException, InterruptedException {
+        gotoPageAndGetScreenshoot(erstellenButton);
+        click(zurückButton);
+        gotoPageAndGetScreenshoot(firstLink);
+        gotoPageAndGetScreenshoot(wichtigsteAngabenLink);
+        gotoPageAndGetScreenshoot(kontaktinformationenLink);
+        gotoPageAndGetScreenshoot(bearbeitenButton);
+        click(abbrechenButton);
+        gotoPageAndGetScreenshoot(spielerLink);
+        click(alleLink);
+        click(zurückButton);
+    }
+
+    private void getWettkampfeZurEinsichtScreenShoots() throws IOException, InterruptedException {
+        gotoPageAndGetScreenshoot(erstellenButton);
+        click(zurückButton);
+        gotoPageAndGetScreenshoot(firstLink);
+        gotoPageAndGetScreenshoot(alleLink);
+        gotoPageAndGetScreenshoot(einsichScoutsLink);
+        gotoPageAndGetScreenshoot(teilnehmer);
+        gotoPageAndGetScreenshoot(hinzufügenButton);
+        click(abbrechenButton);
+        gotoPageAndGetScreenshoot(dieScoutsSpielerLink);
+        click(wichtigsteAngabenLink);
+        click(zurückButton);
+
+
+
+    }
+
+    private void getScoutsScreenShoots() throws IOException, InterruptedException {
+        gotoPageAndGetScreenshoot(erstellenButton);
+        click(zurückButton);
+        gotoPageAndGetScreenshoot(firstLink);
+        gotoPageAndGetScreenshoot(wichtigsteAngabenLink);
+        gotoPageAndGetScreenshoot(kontaktinformationenLink);
+        gotoPageAndGetScreenshoot(bearbeitenButton);
+        click(abbrechenButton);
+        gotoPageAndGetScreenshoot(ausweispapiere);
+        gotoPageAndGetScreenshoot(hinzufügenButton);
+        click(zurückButton);
+        gotoPageAndGetScreenshoot(reservistenLink);
+        gotoPageAndGetScreenshoot(wettkämpfeZurEinsichtScLink);
+        click(alleLink);
+        click(zurückButton);
+
+
+    }
+
+    private void getSpielerubersichtScreenShoots() throws IOException, InterruptedException {
+        gotoPageAndGetScreenshoot(erstellenButton);
+        click(zurückButton);
+        gotoPageAndGetScreenshoot(firstLink);
+        gotoPageAndGetScreenshoot(wichtigsteAngabenLink);
+        gotoPageAndGetScreenshoot(datenVonFamilienmitgliedernLink);
+        gotoPageAndGetScreenshoot(hinzufügenButton);
+        click(abbrechenButton);
+        gotoPageAndGetScreenshoot(transferInDenKlub);
+        gotoPageAndGetScreenshoot(hinzufügenButton);
+        click(abbrechenButton);
+        gotoPageAndGetScreenshoot(mannschaftenScouts);
+        gotoPageAndGetScreenshoot(hinzufügenButton);
+        click(abbrechenButton);
+        gotoPageAndGetScreenshoot(physikalischeDatenLinks);
+        gotoPageAndGetScreenshoot(hinzufügenButton);
+        click(abbrechenButton);
+        gotoPageAndGetScreenshoot(berichteLink);
+        gotoPageAndGetScreenshoot(hinzufügenButton);
+        click(abbrechenButton);
+        gotoPageAndGetScreenshoot(scoutTrainerLink);
+        gotoPageAndGetScreenshoot(hinzufügenButton);
+        click(abbrechenButton);
+        gotoPageAndGetScreenshoot(andereLink);
+        gotoPageAndGetScreenshoot(hinzufügenButton);
+        click(abbrechenButton);
+        click(alleLink);
+        click(zurückButton);
     }
 
     private void getMedizinischesScreenShoots() throws IOException, InterruptedException {
