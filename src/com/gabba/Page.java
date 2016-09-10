@@ -33,6 +33,14 @@ public class Page {
     By passwordField = By.id("P101_PASSWORD");
     By loginButton = By.id("P101_LOGIN");
 
+    //====Кнопки===
+    By erstellenButton = By.linkText("erstellen"); //Erstellen Создать
+    By zurückButton = By.linkText("zurück"); //Zurück Назад
+    By bearbeitenButton = By.linkText("bearbeiten"); //Редактировать
+    By abbrechenButton = By.linkText("abbrechen"); //Отменить
+    By speichernButton = By.linkText("speichern"); //Сохранить
+    By hinzufügenButton = By.linkText("hinzufügen"); //Добавить
+
     //===Sport===
     By sportLink = By.linkText("Sport");
     By spieleLink = By.linkText("Spiele"); //Spiele Матчи
@@ -65,13 +73,17 @@ public class Page {
     By trainingsTeamLink = By.linkText("Trainings / Spiele"); //тренировки игры
     By wettkämpfeTeamLink = By.linkText("Wettkämpfe"); //соревнования
 
+    //===Тренеры===
     By trainerLink = By.linkText("Trainer"); //Trainer Тренеры
+    By kontaktinformationenLink = By.linkText("Kontaktinformationen"); //Контактная информация
+    By mannschaftenTrainerLink = By.xpath("//td[@class='t20RegionBody']//a[4]"); //Команда
+
+
     By wettkämpfeLink = By.linkText("Wettkämpfe"); //Wettkämpfe Соревнования
     By medizinischesTagebuchLink = By.linkText("Medizinisches Tagebuch"); //Medizinisches Tagebuch Травмы/Заболевания
     By berichteLink = By.linkText("Berichte"); //Berichte Отчеты
 
-    By erstellenButton = By.linkText("erstellen"); //Erstellen Создать
-    By zurückButton = By.linkText("zurück"); //Zurück Назад
+
 
     DateFormat dateFormat = new SimpleDateFormat("ddMMYYYY");
     DateFormat timeFormat = new SimpleDateFormat("HHmmss");
@@ -93,12 +105,13 @@ public class Page {
         return new Page(driver);
     }
 
-    public void gotoPageAndGetScreenshoot(By element) throws IOException {
+    public void gotoPageAndGetScreenshoot(By element) throws IOException, InterruptedException {
         click(element);
+        Thread.sleep(2000);
         takeScreenShot();
     }
 
-    public void getScreenShots() throws IOException {
+    public void getScreenShots() throws IOException, InterruptedException {
         gotoPageAndGetScreenshoot(sportLink);
         gotoPageAndGetScreenshoot(spieleLink);
         gotoPageAndGetScreenshoot(erstellenButton);
@@ -115,12 +128,32 @@ public class Page {
         gotoPageAndGetScreenshoot(mannschaftenLink);
         getMannschaftenScreenShoots();
         click(sportLink);
+        getTrainerScreenShoots();
+        click(sportLink);
+
 
 
 
     }
 
-    private void getMannschaftenScreenShoots() throws IOException {
+    private void getTrainerScreenShoots() throws IOException, InterruptedException {
+        gotoPageAndGetScreenshoot(trainerLink);
+        gotoPageAndGetScreenshoot(erstellenButton);
+        click(zurückButton);
+        gotoPageAndGetScreenshoot(firstPlayerLink);
+        gotoPageAndGetScreenshoot(wichtigsteAngabenLink);
+        gotoPageAndGetScreenshoot(kontaktinformationenLink);
+        gotoPageAndGetScreenshoot(bearbeitenButton);
+        click(abbrechenButton);
+        gotoPageAndGetScreenshoot(mannschaftenTrainerLink);
+        gotoPageAndGetScreenshoot(hinzufügenButton);
+        gotoPageAndGetScreenshoot(erstellenButton);
+        click(abbrechenButton);
+        gotoPageAndGetScreenshoot(trainingsTeamLink);
+
+    }
+
+    private void getMannschaftenScreenShoots() throws IOException, InterruptedException {
         gotoPageAndGetScreenshoot(alleMannschaftenLink);
         gotoPageAndGetScreenshoot(nichtAktiveLink);
         click(aktiveLink);
@@ -138,7 +171,7 @@ public class Page {
 
     }
 
-    private void getSpielerScreenShots() throws IOException {
+    private void getSpielerScreenShots() throws IOException, InterruptedException {
         gotoPageAndGetScreenshoot(firstPlayerLink);
         gotoPageAndGetScreenshoot(wichtigsteAngabenLink);
         gotoPageAndGetScreenshoot(weitereInformationenLink);

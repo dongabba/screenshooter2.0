@@ -2,6 +2,7 @@ package com.gabba;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -10,7 +11,8 @@ import java.util.concurrent.TimeUnit;
  * Created by gabba on 03.04.2016.
  */
 public class AppLogic {
-    private WebDriver driver = new ChromeDriver();
+    //private WebDriver driver = new ChromeDriver();
+    private WebDriver driver = new FirefoxDriver();
 
     public Page startBrowser() throws IOException {
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
