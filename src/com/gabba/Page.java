@@ -109,6 +109,69 @@ public class Page {
     By dieScoutsSpielerLink = By.linkText("Die scouts Spieler"); //Игроки, выделенные селекционерами
     By scoutsTrainerLink = By.linkText("Trainer"); //Тренеры
 
+    //===Справочники===
+    By handbücherLink = By.linkText("Handbücher"); //Справочники
+    By attributeFürKalenderereignisse = By.linkText("Attribute für Kalenderereignisse"); //Аттрибуты событий календаря
+    By stadien = By.linkText("Stadien"); //Стадионы
+    By städte = By.linkText("Städte"); //Города
+    By länder = By.linkText("Länder"); //Страны
+    By verwandte = By.linkText("Verwandte"); //Родственники
+    By mannschaften = By.linkText("Mannschaften"); //Команды
+    By trainingsorte = By.linkText("Trainingsorte"); //Места проведения тренировок
+    By trainingsgeräte = By.linkText("Trainingsgeräte"); //Оборудование для тренировок
+    By registerDerÜbungen = By.linkText("Register der Übungen"); //Реестр упражнений
+    By gruppeHinzufügen = By.linkText("gruppe hinzufügen"); //добавить группу упражнений
+    By ubungHinzufügen = By.linkText("übung hinzufügen"); //добавить упражнение
+    By spielfeldbelagtypen = By.linkText("Spielfeldbelagtypen"); //Типы покрытия
+    By spielerstatusImSpiel = By.linkText("Spielerstatus im Spiel"); //Статусы игрока в матче
+    By kategorienFürDieMedizinischeGeschichte = By.linkText("Kategorien für die medizinische Geschichte"); //Категории для медицинской истории
+    By artenVonBeschwerden = By.linkText("Arten von Beschwerden (für den medizinischen Bereich)"); //Типы жалоб для медицины
+    By erbguterkrankungen = By.linkText("Erbguterkrankungen"); //Проблемы наследственности
+    By grundposition = By.linkText("Grundposition"); //Основные позиции
+    By unterpositionen = By.linkText("Unterpositionen"); //Субпозиции
+    By altersgruppen = By.linkText("Altersgruppen"); //Возрастные группы
+    By ubungen = By.linkText("Übungen"); //Физические задачи
+    By intensitätsstufen = By.linkText("Intensitätsstufen"); //Уровни интенсивности
+
+    //===Объявления===
+    By ankündigungenLink = By.linkText("Ankündigungen"); //Объявления
+
+    //===Сообщения===
+    By mitteilungenLink = By.linkText("Mitteilungen"); //Сообщения
+    By neu = By.linkText("Neu "); //Новые
+    By eingegangene = By.linkText("Eingegangene"); //Полученные
+    By gesendete = By.linkText("Gesendete"); //Отправленные
+
+    //===Календарь===
+    By kalenderLink = By.linkText("Kalender"); //Календарь
+    By tag = By.xpath("//span[text()='tag']");
+    By woche = By.xpath("//span[text()='woche']");
+    By trainingsKalenderLink = By.linkText("Trainings"); //Тренировки
+    By ereignisse = By.linkText("Ereignisse"); //События
+    By sonstiges = By.linkText("Sonstiges");
+    By ankommen = By.linkText("Ankommen");
+    By mahlzeit = By.linkText("Mahlzeit");
+    By prozeduren = By.linkText("Prozeduren");
+    By ausfahrt = By.linkText("Ausfahrt");
+    By unterricht = By.linkText("Unterricht");
+    By arztlicheUntersuchung = By.linkText("Ärztliche Untersuchung");
+    By erinnerung = By.linkText("Erinnerung");
+
+    //===Администрирование===
+    By administrationLink = By.linkText("Administration"); //Администрирование
+    By nutzer = By.linkText("Nutzer"); //Пользователи
+    By rollen = By.linkText("Rollen"); //Роли
+    By design = By.linkText("Design"); //Настройка дизайна
+
+    //===Личный кабинет===
+    By persönlichesKabinett = By.linkText("Persönliches Kabinett"); //Личный кабинет
+    By support = By.linkText("Support"); //служба поддержки
+    By aboGeschichte = By.linkText("Abo-Geschichte"); //история подписок
+    By zusatzmodule = By.linkText("Zusatzmodule"); //дополнительные модули
+    By videoführung = By.linkText("Videoführung"); //видеоруководство
+
+
+
     DateFormat dateFormat = new SimpleDateFormat("ddMMYYYY");
     DateFormat timeFormat = new SimpleDateFormat("HHmmss");
 
@@ -176,12 +239,131 @@ public class Page {
         gotoPageAndGetScreenshoot(scoutsTrainerLink);
         getScoutsTrainerScreenShoots();
         click(spielerauswahlLink);
+        click(mainPageLink);
+        gotoPageAndGetScreenshoot(handbücherLink);
+        getHandbucherScreenShoots();
+        click(mainPageLink);
+        gotoPageAndGetScreenshoot(ankündigungenLink);
+        getAnkundigungenScreenShoots();
+        click(mainPageLink);
+        gotoPageAndGetScreenshoot(mitteilungenLink);
+        getMitteilungenScreenShoots();
+        click(mainPageLink);
+        gotoPageAndGetScreenshoot(kalenderLink);
+        getKalenderScreensShoots();
+        click(mainPageLink);
+        gotoPageAndGetScreenshoot(administrationLink);
+        getAdministratorsScreenShoots();
+        click(mainPageLink);
+        gotoPageAndGetScreenshoot(persönlichesKabinett);
+        gotoPageAndGetScreenshoot(support);
+        gotoPageAndGetScreenshoot(aboGeschichte);
+        gotoPageAndGetScreenshoot(zusatzmodule);
+        gotoPageAndGetScreenshoot(videoführung);
 
 
+    }
+
+    private void getAdministratorsScreenShoots() throws IOException, InterruptedException {
+        gotoPageAndGetScreenshoot(nutzer);
+        gotoPageAndGetScreenshoot(firstLink);
+        click(abbrechenButton);
+        gotoPageAndGetScreenshoot(erstellenButton);
+        click(abbrechenButton);
+        click(administrationLink);
+        gotoPageAndGetScreenshoot(rollen);
+        gotoPageAndGetScreenshoot(firstLink);
+        click(abbrechenButton);
+        gotoPageAndGetScreenshoot(design);
+    }
+
+    private void getKalenderScreensShoots() throws IOException, InterruptedException {
+        gotoPageAndGetScreenshoot(tag);
+        gotoPageAndGetScreenshoot(woche);
+        gotoPageAndGetScreenshoot(trainingsKalenderLink);
+        gotoPageAndGetScreenshoot(firstLink);
+        click(trainingsKalenderLink);
+        gotoPageAndGetScreenshoot(erstellenButton);
+        click(trainingsKalenderLink);
+        gotoPageAndGetScreenshoot(spieleLink);
+        gotoPageAndGetScreenshoot(erstellenButton);
+        click(zurückButton);
+        gotoPageAndGetScreenshoot(firstLink);
+        click(zurückButton);
+        gotoPageAndGetScreenshoot(ereignisse);
+        gotoPageAndGetScreenshoot(erstellenButton);
+        click(abbrechenButton);
+        gotoPageAndGetScreenshoot(firstLink);
+        click(zurückButton);
+        gotoPageAndGetScreenshoot(sonstiges);
+        gotoPageAndGetScreenshoot(ankommen);
+        gotoPageAndGetScreenshoot(mahlzeit);
+        gotoPageAndGetScreenshoot(prozeduren);
+        gotoPageAndGetScreenshoot(ausfahrt);
+        gotoPageAndGetScreenshoot(unterricht);
+        gotoPageAndGetScreenshoot(arztlicheUntersuchung);
+        gotoPageAndGetScreenshoot(erinnerung);
+            }
+
+    private void getMitteilungenScreenShoots() throws IOException, InterruptedException {
+        gotoPageAndGetScreenshoot(neu);
+        gotoPageAndGetScreenshoot(eingegangene);
+        gotoPageAndGetScreenshoot(gesendete);
+    }
+
+    private void getAnkundigungenScreenShoots() throws IOException, InterruptedException {
+        gotoPageAndGetScreenshoot(firstLink);
+        click(abbrechenButton);
+        gotoPageAndGetScreenshoot(erstellenButton);
+        click(abbrechenButton);
+
+    }
+
+    private void getHandbucherScreenShoots() throws IOException, InterruptedException {
+        gotoPageAndGetScreenshoot(attributeFürKalenderereignisse);
+        click(abbrechenButton);
+        gotoPageAndGetScreenshoot(stadien);
+        erstellenAbbrechenZuruck();
+        goIntoHandbucher(städte);
+        goIntoHandbucher(länder);
+        goIntoHandbucher(verwandte);
+        goIntoHandbucher(mannschaften);
+        goIntoHandbucher(trainingsorte);
+        goIntoHandbucher(trainingsgeräte);
+        goIntoHandbucher(spielfeldbelagtypen);
+        goIntoHandbucher(spielerstatusImSpiel);
+        goIntoHandbucher(kategorienFürDieMedizinischeGeschichte);
+        goIntoHandbucher(artenVonBeschwerden);
+        goIntoHandbucher(erbguterkrankungen);
+        goIntoHandbucher(grundposition);
+        goIntoHandbucher(unterpositionen);
+        goIntoHandbucher(altersgruppen);
+        goIntoHandbucher(ubungen);
+        gotoPageAndGetScreenshoot(intensitätsstufen);
+        gotoPageAndGetScreenshoot(firstLink);
+        click(abbrechenButton);
+        click(zurückButton);
+        gotoPageAndGetScreenshoot(registerDerÜbungen);
+        gotoPageAndGetScreenshoot(gruppeHinzufügen);
+        click(abbrechenButton);
+        gotoPageAndGetScreenshoot(ubungHinzufügen);
+        click(abbrechenButton);
+        click(zurückButton);
 
 
+    }
 
+    private void goIntoHandbucher(By element) throws IOException, InterruptedException {
+        gotoPageAndGetScreenshoot(element);
+        gotoPageAndGetScreenshoot(firstLink);
+        click(abbrechenButton);
+        erstellenAbbrechenZuruck();
+    }
 
+    private void erstellenAbbrechenZuruck() throws IOException, InterruptedException {
+        gotoPageAndGetScreenshoot(erstellenButton);
+        click(abbrechenButton);
+        click(zurückButton);
     }
 
     private void getScoutsTrainerScreenShoots() throws IOException, InterruptedException {
