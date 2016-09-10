@@ -116,7 +116,7 @@ public class Page {
     By städte = By.linkText("Städte"); //Города
     By länder = By.linkText("Länder"); //Страны
     By verwandte = By.linkText("Verwandte"); //Родственники
-    By mannschaften = By.linkText("Mannschaften"); //Команды
+    By mannschaften = By.xpath(".//td[@class='t20RegionBody']//li[1]/a[text()='Mannschaften']"); //Команды
     By trainingsorte = By.linkText("Trainingsorte"); //Места проведения тренировок
     By trainingsgeräte = By.linkText("Trainingsgeräte"); //Оборудование для тренировок
     By registerDerÜbungen = By.linkText("Register der Übungen"); //Реестр упражнений
