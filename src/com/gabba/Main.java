@@ -9,12 +9,13 @@ public class Main {
         appLogic.startBrowser();
         //Page page = new Page(appLogic.getDriver());
         //PageIT pageIT = new PageIT(appLogic.getDriver());
-        PageFR pageFR = new PageFR(appLogic.getDriver());
-        pageFR.cleanWorkingDirectory();
-        pageFR.userLogin("azhaleiko", "123456");
-        pageFR.userGoToFRLang();
-        pageFR.getPageCode();
-        pageFR.getScreenShots();
+        PageENG pageENG = new PageENG(appLogic.getDriver());
+        //PageFR pageFR = new PageFR(appLogic.getDriver());
+        pageENG.cleanWorkingDirectory();
+        pageENG.userLogin("azhaleiko", "123456");
+        pageENG.userGoToITLang();
+        pageENG.getPageCode();
+        pageENG.getScreenShots();
         appLogic.closeBrowser();
     }
 }
